@@ -1,0 +1,14 @@
+{{!-- {{yield}} --}}
+<div class="recommended-video" {{action 'playVideo'}}>
+    <div class="video-preview">
+        <img class="card-img-top"
+            src={{recommendedVideoData.thumbnail}}
+            alt="recommended image cap">
+    </div>
+    <div class="recommended-details">
+        <h5 style="font-weight: bold;">{{recommendedVideoData.title}}</h5>
+        <span>{{recommendedVideoData.uploaded-by}}</span>
+        <span><span>{{recommendedVideoData.views}} views • </span><span>uploaded on {{date}}</span></span>
+    </div>
+    {{log recommendedVideoData}}
+</div>

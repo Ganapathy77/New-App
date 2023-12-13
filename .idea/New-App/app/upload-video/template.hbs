@@ -1,0 +1,35 @@
+<div class="upload-wrapper" >
+    <div class="upload-container">
+        <div class="upload-heading">
+            <h4>Upload Your Video</h4>
+        </div>
+        <form id="upload-form">
+            <div class="input-box">
+                <input id="video-title" type="text" required>
+                <label>Video Title</label>
+            </div>
+            <div class="input-box">
+                <input id="video-url" type="url" required>
+                <label>Video URL</label>
+            </div>
+            <div class="input-box">
+                <input id="video-thumbnail" type="url" required>
+                <label>Video Thumbnail</label>
+            </div>
+            <div class="input-box textarea">
+                <textarea id="video-summary" cols="46" rows="2"></textarea>
+                <label>Video Summary</label>
+            </div>
+            <div class="input-box">
+                <select id="private-public">
+                    <option value="" hidden> --- </option>
+                    <option value="private" >Private</option>
+                    <option value="public" >Public</option>
+                </select>
+                <label>select your video type</label>
+            </div>
+            <button id="upload-btn" type="submit" class="form-btn upload-btn" {{action 'uploadBtnAction'}}>Upload Video</button>
+        </form>
+    </div>
+</div>
+{{outlet}}

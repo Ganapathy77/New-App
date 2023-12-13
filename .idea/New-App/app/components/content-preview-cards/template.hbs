@@ -1,0 +1,31 @@
+{{!-- {{yield}} --}}
+<div class="card my-card-style">
+    <div class="p-2"><img class="card-img-top" src={{videoSummary.thumbnail}} alt="Card image cap">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{videoSummary.title}}</h5>
+        <p class="card-text" style="height: 72px;">{{videoSummary.summary}}</p>
+        <div class="video-user-container">
+            <div class="user-profile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlQ_-by6fcdnOVOjrzoxHsHNwZ0yBHC5Cs08rzGVU&s"
+                    alt="User Profile photo">
+                <span style="margin-left: 15px;">{{videoSummary.uploaded-by}}</span>
+            </div>
+            <div class="date-views">
+                <span style="margin: 0px 10px;">{{videoSummary.views}} Views</span>
+                <span>•</span>
+                <span style="margin: 0px 10px;">{{date}}</span>
+            </div>
+        </div>
+        <div class="card-btns">
+            {{!-- <a href="#" class="btn btn-primary play-video"> --}}
+                {{!-- <LinkTo @route="play-video" @model={{videoSummary}}>{{videoSummary.id}}</LinkTo> --}}
+                {{!-- {{#link-to 'play-video' {{action=''}} class="btn btn-primary play-video"}}Play
+                Video{{/link-to}} --}}
+                {{!-- </a> --}}
+            <a href="#" class="btn btn-primary play-video" {{action 'playVideo' }}>Play  Video</a>
+            <a href="#" class="btn btn-danger remove-video" {{action 'removeVideo' videoSummary.id}}>Info</a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{{!-- <div class="login-register-body ">
+{{log-reg-popup isLoggedIN=isLoggedIN}}
+</div> --}}
+
+<div class="play-video-container">
+    <div class="video-container">
+        <div class="video-player-container">
+            <video width="800" height="400" controls id="video">
+                <source src="">
+                {{!-- <source src={{videosummary.url}}>
+                {{log model.url}} --}}
+                <source src={{playVideoData.url}}>
+            </video>
+        </div>
+        <div class="video-details-container">
+            <h4 style="font-weight: bold;">Beauty Of Nature</h4>
+            <div class="video-user-container">
+                <div class="user-profile">
+                    <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg"
+                        alt="User Profile photo">
+                    <span style="margin-left: 15px;">{{playVideoData.uploaded-by}}</span>
+                </div>
+                <div class="date-views">
+                    <span style="margin: 0px 10px;">{{playVideoData.views}} Views</span>
+                    <span >•</span>
+                    <span style="margin: 0px 10px;">uploaded On - {{date}}</span>
+                </div>
+            </div>
+            <span class="video-summary-details" >
+                {{playVideoData.summary}}
+                {{queryParams.videoId}}
+                {{log "sdui"}}
+                {{log queryParams.videoId}}
+            </span>
+        </div>
+    </div>
+    <div class="other-videos-container">
+        {{#each recommendedVideoDatas as |recommendedVideoData|}}
+            {{recommended-video recommendedVideoData=recommendedVideoData}}
+        {{/each}}
+    </div>
+</div>
+{{outlet}}

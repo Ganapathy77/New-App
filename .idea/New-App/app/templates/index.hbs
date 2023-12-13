@@ -1,0 +1,14 @@
+{{log-reg-popup isLoggedIN=isLoggedIN}}
+
+<div class="index-alert active" id="index-alert">
+    <div class="alert-box active" id="index-alert-box">
+        <span class="icon-close" {{action 'closeBtnAction' }}><i class="bi bi-x"></i></span>
+        <div class="alert-in" id="index-alert-in">
+            Please login to use the application to the fullest...Don't have an account regisetr an account
+        </div>
+    </div>
+</div>
+<div class="main_content_wrapper">
+    {{main-content-container videoSummarys=videoDetails}}
+</div>
+{{outlet}}

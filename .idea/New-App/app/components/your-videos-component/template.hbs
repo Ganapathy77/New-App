@@ -1,0 +1,28 @@
+{{!-- {{yield}} --}}
+<div class="card text-center my-your-video-card-style single-user-card active" id={{currentUserVideo.id}}>
+        <div class="card-header p-0">
+            <div class="p-2"><img class="card-img-top"
+                    src={{currentUserVideo.thumbnail}}
+                    alt="Card image cap">
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{currentUserVideo.title}}</h5>
+            <p class="card-text">{{currentUserVideo.summary}}</p>
+            <div class="card-btns">
+                {{!-- {{#link-to 'play-video' currentUserVideo=currentUserVideo class="btn btn-primary play-video"}}Play Video{{/link-to}} --}}
+                <a href="#" class="btn btn-primary play-video" {{action 'playVideo' }}>Play  Video</a>
+                <a href="#" class="btn btn-danger remove-video" {{action 'removeVideo' currentUserVideo.id}}>Remove Video</a>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <div class="your-video-user-container">
+                <div class="date-views"> 
+                    <span style="margin: 0px 10px;">{{currentUserVideo.views}} Views</span>
+                </div>
+                <div class="date-views">
+                    <span style="margin: 0px 10px;">uploaded On {{date}}</span>
+                </div>
+            </div>
+        </div>
+    </div>

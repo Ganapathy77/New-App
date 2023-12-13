@@ -1,0 +1,10 @@
+{{!-- {{yield}} --}}
+<div class="alert-body">
+    <div class="alert-body-in">
+        <div class="alert-box {{if active 'active'}}" id="alert-box">
+            <span class="icon-close" {{action 'closeBtnAction' }}><i class="bi bi-x"></i></span>
+            <div class="alert-in" id="alert-in">{{alertMsg}}
+            </div>
+        </div>
+    </div>
+</div>

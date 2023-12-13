@@ -1,0 +1,17 @@
+{{!-- {{outlet}} --}}
+
+{{#if isSuccess}}
+<div class="your-video-container">
+    {{#each currentUserVideos as |currentUserVideo|}}
+    {{your-videos-component currentUserVideo=currentUserVideo}}
+    {{/each}}
+</div>
+
+{{else}}
+<div class="no-user-videos">
+    <span>
+        No uploaded video
+    </span>
+
+</div>
+{{/if}}

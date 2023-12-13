@@ -1,0 +1,11 @@
+{{!-- {{yield}} --}}
+<div class="container">
+    <div class="row g-5 mb-5">
+        {{#each videoSummarys as |videoSummary|}}
+        <div class="col-12 col-md-6  col-lg-4 single-card active" id="{{videoSummary.id}}">
+            {{content-preview-cards videoSummary=videoSummary}}
+        </div>
+        {{/each}}
+    </div>
+
+</div>

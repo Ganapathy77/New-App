@@ -1,0 +1,302 @@
+.main_content_wrapper{
+    position: absolute;
+    /* min-width: 100vw; */
+    min-height: 100vh;
+    top: 15%;
+    left: 0%;
+    right: 0%;
+    /* background: rgb(98, 98, 192); */
+    background: rgb(155, 155, 251);
+    /* background: url('https://www.pcclean.io/wp-content/uploads/2020/4/mYv2Ir.jpg') repeat; */
+}
+
+.my-card-style{
+    background-color: #fff0ba !important;
+    box-shadow: 1px 1px 20px #666;
+    transition: all 0.5s ease;
+    height: 500px !important;
+}
+.my-card-style:hover{
+    transform: scale(1.01);
+    box-shadow: 1px 1px 30px #444;
+   
+}
+.my-card-style img{
+    height: 240px;
+}
+.your-video-container{
+    padding: 120px 150px 0 150px;
+    width: 80%;
+} 
+.my-your-video-card-style{
+    margin-bottom: 35px;
+    background-color: #fff0ba !important;
+    box-shadow: 1px 1px 20px #666;
+    transition: all 0.5s ease;
+    /* height: 400px !important; */
+    width: 100%;
+}
+.my-your-video-card-style:hover{
+    transform: scale(1.03);
+    box-shadow: 1px 1px 30px #444;
+   
+}
+.my-your-video-card-style img{
+    height: 340px;
+}
+
+.card-body .card-btns{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.card-btns .play-video{
+    flex: 4;
+    background-color: #0794f5;
+}
+.card-btns .play-video:hover{
+    /* transform: scale(1.01); */
+    background-color: #1fa2fa;
+    box-shadow: 1px 1px 10px #777;
+}
+.card-btns .remove-video{
+    flex: 3;
+    background-color: #f15260;
+    transition: all 0.2s ease;
+}
+.card-btns .remove-video:hover{
+    transform: scale(1.01);
+    background-color: #ff4554;
+    box-shadow: 1px 1px 10px #777;
+}
+.single-card {
+    transform: scale(0);
+    transition: all 0.5s ease-in;
+}
+.single-card.active{
+    transform: scale(1);
+    transition: all 0.5s ease-out;
+}
+.single-user-card {
+    transform: scale(0);
+    transition: all 1s ease-in;
+}
+.single-user-card.active{
+    transform: scale(1);
+    transition: all 1s ease-out;
+}
+
+/* upload route css */
+
+.upload-wrapper{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(155, 155, 251);
+}
+.upload-container{
+    /* position: absolute;
+    top: 12%;
+    left: 0%;*/
+    padding: 30px 60px;
+    margin-top: 70px ;
+    height: 700px;
+    width: 500px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px #666;
+    transition: all 0.5s ease;
+}
+.upload-container:hover{
+    transform: scale(1.02);
+    box-shadow: 1px 1px 20px #444;
+}
+
+.upload-heading{
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 10px;
+}
+
+.upload-heading h4{
+    color: #111;
+    font-weight: 600;
+    font-size: 30px;
+}
+.upload-btn{
+    background: #0794f5 !important;
+    font-size: 20px !important;
+    box-shadow: 1px 1px 10px #333 !important;
+}
+.upload-btn:hover{
+    transform: scale(1.01);
+    box-shadow: 1px 1px 12px #444 !important;
+}
+
+/* css for play-video route */
+
+.play-video-container{
+    /* height: 200px;
+    width: 200px; */
+    /* background: #0794f5; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 10vh;
+    width: 100%;
+    height: 90vh;
+    gap: 20px;
+}
+
+.play-video-container .video-container{
+    flex: 4;
+    height: 200px;
+    width: 100%;
+    background: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-container .video-player-container{
+    flex: 6;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 1px 1px 15px #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    padding: 10px;
+}
+.video-player-container video{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.play-video-container .video-details-container{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video-details-container .video-user-container,
+.card-body .video-user-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-body .video-user-container{
+    margin-bottom: 25px;
+}
+.card-body p{
+    margin-bottom: 0;
+}
+.card-footer .your-video-user-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.video-user-container img,
+.your-video-user-container img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.video-details-container .video-summary-details{
+    padding: 0px 15px;
+    margin-top: 5px;
+}
+.video-container .video-details-container{
+    flex: 2;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 1px 1px 15px #333;
+}
+.play-video-container .other-videos-container{
+    flex: 2;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: 1px 1px 15px #333;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    overflow: auto;
+    /* justify-content: center; */
+}
+.other-videos-container .recommended-video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px #444;
+    height: 95px;
+    width: 458px;
+    pointer-events: all;
+    cursor: pointer;
+    transition: all 0.8s ease;
+}
+.other-videos-container .recommended-video:hover{
+    transform: scale(1.01);
+}
+.recommended-video .video-preview{
+    flex: 2;
+    width: 100%;
+}
+.video-preview img{
+    border-radius: 15px;
+    height: 95px;
+    width: 178px;
+}
+.recommended-video .recommended-details{
+    flex: 3;
+    width: 100%;
+    height: 100%;
+    /* background: #0794f5; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.no-user-videos{
+    background: #fff;
+    width: 300px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 20px #555;
+    transition: all 0.5s ease;
+}
+.no-user-videos:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 25px #444;
+}
+.no-user-videos span{
+    font-size: 25px;
+    font-weight: bold;
+}

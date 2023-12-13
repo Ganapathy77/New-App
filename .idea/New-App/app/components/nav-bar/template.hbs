@@ -1,0 +1,34 @@
+{{!-- {{yield}} --}}
+<header>
+    <div class="logo-container">
+        {{#link-to 'home' class="logo" }}Home{{/link-to}}
+        {{#if loggedINDetails.loginDetails.isLoggedIN}}
+        <span >welcome, {{loggedINDetails.loginDetails.username}} </span>
+        {{/if}}
+    </div>
+
+    
+    <nav class="navigation">
+        {{#if loggedINDetails.loginDetails.isLoggedIN}}
+        <div>
+            <a>{{#link-to 'your-videos' class="a"}}Your Videos{{/link-to}}</a>
+            <a>{{#link-to 'upload_video' class="a"}}Upload Video{{/link-to}}</a>
+            <a href="#">Profile</a>
+            <a href="#">About us</a>
+        </div>
+        {{else}}
+        <div >
+            <a class="disabled" href="#">Your Videos</a>
+            <a class="disabled" href="#">Upload Video</a>
+            <a class="disabled" href="#">Profile</a>
+            <a href="#">About us</a>
+        </div>
+        {{/if}}
+        {{#if loggedINDetails.loginDetails.isLoggedIN}}
+        <button class="btnLogin-popup logoutBtn" {{action 'logout' }}>Logout</button>
+        {{else}}
+        <button class="btnLogin-popup" {{action 'loginBtnAction' }}>Login</button>
+        {{/if}}
+    </nav>
+    
+</header>
