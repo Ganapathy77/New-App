@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" 
+         version="2.4">
+    <display-name>Welcome to Tomcat</display-name>
+    <description>
+        Welcome to Tomcat
+    </description>
+    <!-- <welcome-file-list>
+    
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list> -->
+  
+	<servlet>
+		<servlet-name>servlet1</servlet-name>
+		<servlet-class>Login</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet1</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet2</servlet-name>
+		<servlet-class>Signup</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet2</servlet-name>
+		<url-pattern>/Signup</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet3</servlet-name>
+		<servlet-class>Upload</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet3</servlet-name>
+		<url-pattern>/Upload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet4</servlet-name>
+		<servlet-class>HomePageData</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet4</servlet-name>
+		<url-pattern>/HomePageData</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet5</servlet-name>
+		<servlet-class>AdminVideoUpload</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet5</servlet-name>
+		<url-pattern>/AdminVideoUpload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet6</servlet-name>
+		<servlet-class>IndexVideoDetails</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet6</servlet-name>
+		<url-pattern>/IndexVideoDetails</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>servlet7</servlet-name>
+		<servlet-class>PlayPageData</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet7</servlet-name>
+		<url-pattern>/PlayPageData</url-pattern>
+	</servlet-mapping>
+    
+	<servlet>
+		<servlet-name>servlet8</servlet-name>
+		<servlet-class>CurrentUserVideos</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet8</servlet-name>
+		<url-pattern>/CurrentUserVideos</url-pattern>
+	</servlet-mapping>
+     <!--<servlet>
+          <servlet-name>action1</servlet-name>
+          <jsp-file>/index.jsp</jsp-file>
+     </servlet>
+     <servlet-mapping>
+          <servlet-name>action1</servlet-name>
+          <url-pattern>/index</url-pattern>
+     </servlet-mapping>
+     <servlet>
+          <servlet-name>action2</servlet-name>
+          <jsp-file>/Signup.jsp</jsp-file>
+     </servlet>
+     <servlet-mapping>
+          <servlet-name>action2</servlet-name>
+          <url-pattern>/Signup</url-pattern>
+     </servlet-mapping>
+     <servlet>
+          <servlet-name>action3</servlet-name>
+          <jsp-file>/Welcome.jsp</jsp-file>
+     </servlet>
+     <servlet-mapping>
+          <servlet-name>action3</servlet-name>
+          <url-pattern>/Welcome</url-pattern>
+     </servlet-mapping>
+     <servlet>
+		<servlet-name>servlet1</servlet-name>
+		<servlet-class>TestingServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet1</servlet-name>
+		<url-pattern>/Test</url-pattern>
+	</servlet-mapping>
+
+     <servlet>
+		<servlet-name>servlet2</servlet-name>
+		<servlet-class>SignUp</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>servlet2</servlet-name>
+		<url-pattern>/userdetails</url-pattern>
+	</servlet-mapping>-->
+</web-app>

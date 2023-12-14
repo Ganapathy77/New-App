@@ -1,0 +1,175 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="Userdetails">
+         <table name="Userdetails">
+                  <columns>
+                           <column name="USER_ID">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Userdetails.USER_ID</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="USER_NAME">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+									<unique>true</unique>
+                           </column>
+						   <column name="USER_EMAIL">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+									<unique>true</unique>
+                           </column>
+                           <column name="PASSWORD">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>30</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                  </columns>
+                  <primary-key name="Userdetails_PK">
+                           <primary-key-column>USER_ID</primary-key-column>
+                  </primary-key>
+				  
+				  <unique-keys>
+                           <unique-key name="Userdetails_UK">
+                                    <unique-key-column>USER_ID</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+         </table>
+		 <table name="Videodetails">
+                  <columns>
+                           <column name="VIDEO_ID">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Videodetails.VIDEO_ID</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="UPLOADED_BY">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIDEO_TITLE">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+									<unique>true</unique>
+                           </column>
+                           <column name="VIDEO_THUMBNAIL">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>1000</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIDEO_URL">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>1000000</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIDEO_SUMMARY">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50000</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="PRIVATE_PUBLIC">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="UPLOADED_ON">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIEWS">
+                                    <data-type>CHAR</data-type>
+									<max-size>100</max-size>
+									<default-value>0</default-value>
+                                    <nullable>true</nullable>
+                           </column>
+                  </columns>
+                  <primary-key name="Videodetails_PK">
+                           <primary-key-column>VIDEO_ID</primary-key-column>
+                  </primary-key>
+				  
+				  <foreign-keys>
+					<foreign-key name="Videodetails_FK" reference-table-name="Userdetails" isbidirectional="false">
+						<fk-columns>
+							<fk-column>
+								<fk-local-column>UPLOADED_BY</fk-local-column>
+								<fk-reference-column>USER_NAME</fk-reference-column>
+							</fk-column>
+						</fk-columns>
+						<fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+					</foreign-key>
+				 </foreign-keys>
+				  
+				  <unique-keys>
+                           <unique-key name="Videodetails_UK">
+                                    <unique-key-column>VIDEO_ID</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+				  
+         </table>
+		 <table name="Indexvideodetails">
+                  <columns>
+                           <column name="VIDEO_ID">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Indexvideodetails.VIDEO_ID</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="UPLOADED_BY">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIDEO_TITLE">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+									<unique>true</unique>
+                           </column>
+                           <column name="VIDEO_THUMBNAIL">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>1000</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIDEO_URL">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>1000000</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIDEO_SUMMARY">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50000</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="PRIVATE_PUBLIC">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="UPLOADED_ON">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>100</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+						   <column name="VIEWS">
+                                    <data-type>CHAR</data-type>
+									<max-size>100</max-size>
+									<default-value>0</default-value>
+                                    <nullable>true</nullable>
+                           </column>
+                  </columns>
+                  <primary-key name="Indexvideodetails_PK">
+                           <primary-key-column>VIDEO_ID</primary-key-column>
+                  </primary-key>
+				  
+				  <unique-keys>
+                           <unique-key name="Indexvideodetails_UK">
+                                    <unique-key-column>VIDEO_ID</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+				  
+         </table>
+</data-dictionary>

@@ -1,0 +1,146 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="Test">
+         <table name="Employee">
+                  <columns>
+                           <column name="EMP_ID">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Employee.EMP_ID</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="EMP_NAME">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="EMAILID">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>30</max-size>
+                                    <!--Default Value-->
+                                    <default-value>azamsharp@gmail.com</default-value>
+                                    <nullable>false</nullable>
+                                    <!--Allowed Pattern-->
+                                    <allowed-values>
+                                             <pattern>^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$</pattern>
+                                    </allowed-values>
+                           </column>
+                           <column name="PANCARD">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>10</max-size>
+                                    <allowed-values>
+                                             <pattern>^[A-z]{5}[0-9]{4}[A-Z]{1}$</pattern>
+                                    </allowed-values>
+                           </column>
+                           <column name="GENDER">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>10</max-size>
+                                    <nullable>false</nullable>
+                                    <!--Allowed Values-->
+                                    <allowed-values>
+                                             <value>Male</value>
+                                             <value>Female</value>
+                                    </allowed-values>
+                           </column>
+                           <column name="EMP_DOB">
+                                    <data-type>DATE</data-type>
+                           </column>
+                           <column name="EMP_DOJ">
+                                    <data-type>DATE</data-type>
+                           </column>
+                           <column name="SEATING_LOCATION">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>10</max-size>
+                           </column>
+                           <column name="EXTN_NO">
+                                    <data-type>INTEGER</data-type>
+                           </column>
+                  </columns>
+                  <primary-key name="Employee_PK">
+                           <primary-key-column>EMP_ID</primary-key-column>
+                  </primary-key>
+                  <!--Unique Key-->
+                  <unique-keys>
+                           <unique-key name="Employee_UK">
+                                    <unique-key-column>EMAILID</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+         </table>
+
+         <table name="Team">
+                  <columns>
+                           <column name="TEAM_ID">
+                                    <data-type>BIGINT</data-type>
+                                    <uniquevalue-generation>
+                                             <generator-name>Team.TEAM_ID</generator-name>
+                                    </uniquevalue-generation>
+                           </column>
+                           <column name="TEAM_NAME">
+                                    <data-type>CHAR</data-type>
+                                    <max-size>50</max-size>
+                                    <nullable>false</nullable>
+                           </column>
+                           <column name="WORKING_HOURS">
+                                    <data-type>INTEGER</data-type>
+                                    <default-value>45</default-value>
+                                    <nullable>false</nullable>
+                                    <!--Allowed Range-->
+                                    <allowed-values>
+                                             <from>30</from>
+                                             <to>50</to>
+                                    </allowed-values>
+                           </column>
+                  </columns>
+                  <!--Primary Key-->
+                  <primary-key name="Team_PK">
+                           <primary-key-column>TEAM_ID</primary-key-column>
+                  </primary-key>
+                  <unique-keys>
+                           <unique-key name="Team_UK">
+                                    <unique-key-column>TEAM_NAME</unique-key-column>
+                           </unique-key>
+                  </unique-keys>
+                  <!--Index-->
+                  <indexes>
+                           <index name="Team_IDX">
+                                    <index-column>TEAM_NAME</index-column>
+                           </index>
+                  </indexes>
+         </table>
+
+         <table name="TeamMembers">
+                  <columns>
+                           <column name="TEAM_ID">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+                           <column name="EMP_ID">
+                                    <data-type>BIGINT</data-type>
+                           </column>
+                  </columns>
+                  <primary-key name="TeamMembers_PK">
+                           <primary-key-column>TEAM_ID</primary-key-column>
+                           <primary-key-column>EMP_ID</primary-key-column>
+                  </primary-key>
+                  <foreign-keys>
+                           <!--Foreign Key with ON-DELETE-RESTRICT-->
+                           <foreign-key name="TeamMembers_FK1" reference-table-name="Team">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>TEAM_ID</fk-local-column>
+                                                      <fk-reference-column>TEAM_ID</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                                    <fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+                           </foreign-key>
+                           <!--Foreign Key with ON-DELETE-CASCADE-->
+                           <foreign-key name="TeamMembers_FK" reference-table-name="Employee">
+                                    <fk-columns>
+                                             <fk-column>
+                                                      <fk-local-column>EMP_ID</fk-local-column>
+                                                      <fk-reference-column>EMP_ID</fk-reference-column>
+                                             </fk-column>
+                                    </fk-columns>
+                                    <fk-constraints>ON-DELETE-CASCADE</fk-constraints>
+                           </foreign-key>
+                  </foreign-keys>
+         </table>
+</data-dictionary>
